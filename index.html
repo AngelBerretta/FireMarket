@@ -1,13 +1,23 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>fire-market</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
+    <title>Fire Market</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    
+    <script>
+      // Prevenir zoom con Ctrl+/Ctrl-
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && 
+            (e.key === '+' || e.key === '-' || e.key === '=' || e.keyCode === 187 || e.keyCode === 189)) {
+          e.preventDefault();
+        }
+      }, false);
+    </script>
   </body>
 </html>

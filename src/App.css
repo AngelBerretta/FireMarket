@@ -6,8 +6,65 @@
 
 .main-content {
   flex: 1;
-  padding: 20px;
+  padding: 1.25rem;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+}
+
+.page-container {
+  background-color: #2a2a2a;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 1px solid rgba(255, 107, 53, 0.1);
+}
+
+.page-container h2 {
+  font-size: 1.5rem; /* 24px */
+  margin-bottom: 1rem;
+}
+
+.page-container p {
+  font-size: 1rem; /* 16px */
+}
+
+.footer {
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  color: white;
+  text-align: center;
+  padding: 1.25rem;
+  margin-top: 2rem;
+  border-top: 2px solid #ff6b35;
+}
+
+.footer p {
+  margin: 0;
+  color: #999;
+  font-size: 0.875rem; /* 14px */
+}
+
+.loading-spinner {
+  padding: 3rem 1.25rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .page-container {
+    padding: 1.5rem;
+  }
+  
+  .page-container h2 {
+    font-size: 1.25rem; /* 20px */
+  }
 }

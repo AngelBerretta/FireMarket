@@ -1,50 +1,91 @@
 import '../css/ItemListContainer.css'
-import PropTypes from 'prop-types'
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import ItemList from './ItemList'
+import { getProductsByCategory } from '../data/products'
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
+  const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  const { categoryId } = useParams()
+
+  useEffect(() => {
+    setLoading(true)
+    
+    const fetchProducts = async () => {
+      try {
+        const category = categoryId || 'all'
+        const data = await getProductsByCategory(category)
+        setProducts(data)
+        setError(null)
+      } catch (err) {
+        setError('Error al cargar los productos')
+        console.error(err)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchProducts()
+  }, [categoryId])
+
+  if (loading) {
+    return (
+      <div className="loading-spinner">
+        <div className="spinner"></div>
+        <p>Cargando productos...</p>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="error-container">
+        <h3>Error</h3>
+        <p>{error}</p>
+      </div>
+    )
+  }
+
+  const getCategoryTitle = () => {
+    switch(categoryId) {
+      case 'electronics':
+        return 'Electrónica'
+      case 'clothing':
+        return 'Ropa'
+      case 'home':
+        return 'Hogar'
+      case 'sports':
+        return 'Deportes'
+      case 'all':
+        return 'Todos los Productos'
+      default:
+        return 'Todos los Productos'
+    }
+  }
+
+  const categoryTitle = getCategoryTitle()
+
   return (
     <div className="item-list-container">
-      <div className="hero-section">
-        <h2 className="hero-title">Fire Market</h2>
-        <p className="hero-subtitle">Tu destino para las mejores ofertas</p>
+      <div className="category-header">
+        <h2 className="category-title">
+          <span className="category-icon">🔥</span> {categoryTitle}
+        </h2>
+        <p className="category-count">{products.length} productos encontrados</p>
       </div>
       
-      <div className="greeting-section">
-        <p className="greeting-text">{greeting}</p>
-      </div>
-      
-      <div className="features-section">
-        <div className="features-grid">
-          <div className="feature-card">
-            <div className="feature-icon">🔥</div>
-            <h3>Ofertas Exclusivas</h3>
-            <p>Los mejores precios en productos seleccionados</p>
-          </div>
-          
-          <div className="feature-card">
-            <div className="feature-icon">🚚</div>
-            <h3>Envío Rápido</h3>
-            <p>Entrega en 24-48 horas en compras mayores a $50</p>
-          </div>
-          
-          <div className="feature-card">
-            <div className="feature-icon">🛡️</div>
-            <h3>Compra Segura</h3>
-            <p>Protección de datos y transacciones 100% seguras</p>
-          </div>
+      {products.length > 0 ? (
+        <ItemList products={products} />
+      ) : (
+        <div className="no-products">
+          <h3>No hay productos en esta categoría</h3>
+          <p>Prueba con otra categoría o vuelve al inicio</p>
         </div>
-      </div>
-      
-      <div className="coming-soon">
-        <h3>Próximamente nuestro catálogo de productos</h3>
-        <p>Estamos preparando las mejores categorías para ti</p>
-      </div>
+      )}
     </div>
   )
-}
-
-ItemListContainer.propTypes = {
-  greeting: PropTypes.string.isRequired
 }
 
 export default ItemListContainer

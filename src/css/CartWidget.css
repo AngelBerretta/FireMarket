@@ -1,36 +1,58 @@
+/* src/css/CartWidget.css - Mejoras de color */
 .cart-widget {
   display: flex;
   align-items: center;
-  background-color: #ff6b35;
-  border-radius: 20px;
-  padding: 8px 16px;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(255, 204, 0, 0.1));
+  border: 1px solid rgba(255, 107, 53, 0.3);
+  border-radius: 50px;
+  padding: 10px 20px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  gap: 12px;
+  backdrop-filter: blur(10px);
 }
 
 .cart-widget:hover {
-  background-color: #ff8b35;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.3), rgba(255, 204, 0, 0.2));
+  border-color: rgba(255, 107, 53, 0.5);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.25);
+}
+
+.cart-widget:hover .cart-fire {
+  animation: fire-dance 0.8s infinite alternate;
+}
+
+@keyframes fire-dance {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-3px) rotate(10deg); }
+  100% { transform: translateY(0) rotate(-10deg); }
 }
 
 .cart-icon {
-  color: white;
+  color: #ffcc00;
   display: flex;
   align-items: center;
 }
 
 .cart-count {
-  background-color: white;
-  color: #ff6b35;
+  background: linear-gradient(135deg, #ff6b35, #ff8b35);
+  color: white;
   border-radius: 50%;
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 14px;
-  margin-left: 8px;
+  font-weight: 800;
+  font-size: 12px;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.4);
+}
+
+.cart-fire {
+  font-size: 18px;
+  margin-left: 2px;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 4px rgba(255, 107, 53, 0.7));
 }
