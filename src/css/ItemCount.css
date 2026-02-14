@@ -113,16 +113,16 @@
 }
 
 @keyframes cart-bounce {
-  0%, 100% { 
-    transform: translateY(0) scale(1.1); 
+  0%, 100% {
+    transform: translateY(0) scale(1.1);
   }
-  50% { 
-    transform: translateY(-3px) scale(1.2); 
+  50% {
+    transform: translateY(-3px) scale(1.2);
   }
 }
 
 .stock-info {
-  margin-top: 0.875rem; /* 14px */
+  margin-top: 0.875rem;
   text-align: center;
 }
 
@@ -178,26 +178,26 @@
   .count-controls {
     padding: 0.25rem;
   }
-  
+
   .count-button {
     width: 2.25rem;
     height: 2.25rem;
     font-size: 1.125rem;
   }
-  
+
   .count-number {
     font-size: 1.5rem;
   }
-  
+
   .add-to-cart-button {
     padding: 0.75rem;
     font-size: 0.8125rem;
   }
-  
+
   .cart-icon {
     font-size: 1rem;
   }
-  
+
   .stock-message {
     font-size: 0.8125rem;
     padding: 0.375rem 0.75rem;
@@ -209,21 +209,21 @@
   .item-count {
     margin-bottom: 1rem;
   }
-  
+
   .count-controls {
     margin-bottom: 0.75rem;
   }
-  
+
   .count-button {
     width: 2rem;
     height: 2rem;
     font-size: 1rem;
   }
-  
+
   .count-number {
     font-size: 1.25rem;
   }
-  
+
   .add-to-cart-button {
     padding: 0.625rem;
     font-size: 0.75rem;

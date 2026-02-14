@@ -2,7 +2,7 @@ import '../css/ItemDetail.css'
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import ItemDetail from './ItemDetail'
-import { getProductById } from '../data/products'
+import { getProductById } from '../service/firestoreService'
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null)
@@ -13,27 +13,28 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     setLoading(true)
+    setError(null)
     
     const fetchProduct = async () => {
       try {
+        // Consultar UN SOLO documento de Firestore por ID
         const data = await getProductById(itemId)
+        
         if (data) {
           setProduct(data)
-          setError(null)
         } else {
           setError('Producto no encontrado')
           setProduct(null)
         }
       } catch (err) {
         setError('Error al cargar el producto')
-        console.error(err)
       } finally {
         setLoading(false)
       }
     }
 
     fetchProduct()
-  }, [itemId])
+  }, [itemId]) // Se ejecuta cada vez que cambia el ID del producto
 
   const handleBack = () => {
     navigate(-1)

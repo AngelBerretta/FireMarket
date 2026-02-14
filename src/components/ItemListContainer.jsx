@@ -2,7 +2,7 @@ import '../css/ItemListContainer.css'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from './ItemList'
-import { getProductsByCategory } from '../data/products'
+import { getProductsByCategory } from '../service/firestoreService'
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([])
@@ -12,23 +12,26 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     setLoading(true)
+    setError(null)
     
     const fetchProducts = async () => {
       try {
+        // Obtener la categoría del parámetro de la URL
         const category = categoryId || 'all'
+        
+        // Consultar Firestore con filtro de categoría
         const data = await getProductsByCategory(category)
+        
         setProducts(data)
-        setError(null)
       } catch (err) {
         setError('Error al cargar los productos')
-        console.error(err)
       } finally {
         setLoading(false)
       }
     }
 
     fetchProducts()
-  }, [categoryId])
+  }, [categoryId]) // Se ejecuta cada vez que cambia la categoría
 
   if (loading) {
     return (

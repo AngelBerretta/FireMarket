@@ -1,4 +1,3 @@
-/* src/css/CartWidget.css - Mejoras de color */
 .cart-widget {
   display: flex;
   align-items: center;
@@ -11,6 +10,7 @@
   position: relative;
   gap: 12px;
   backdrop-filter: blur(10px);
+  text-decoration: none;
 }
 
 .cart-widget:hover {
@@ -18,16 +18,6 @@
   border-color: rgba(255, 107, 53, 0.5);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(255, 107, 53, 0.25);
-}
-
-.cart-widget:hover .cart-fire {
-  animation: fire-dance 0.8s infinite alternate;
-}
-
-@keyframes fire-dance {
-  0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-3px) rotate(10deg); }
-  100% { transform: translateY(0) rotate(-10deg); }
 }
 
 .cart-icon {
@@ -50,9 +40,16 @@
   box-shadow: 0 2px 8px rgba(255, 107, 53, 0.4);
 }
 
-.cart-fire {
-  font-size: 18px;
-  margin-left: 2px;
-  transition: transform 0.3s ease;
-  filter: drop-shadow(0 0 4px rgba(255, 107, 53, 0.7));
+/* ─── dentro del panel mobile el widget puede ser más compacto ─── */
+.mobile-menu-cart .cart-widget {
+  padding: 8px 14px;
+  gap: 8px;
+}
+
+/* ═══  480px  ═══ */
+@media (max-width: 480px) {
+  .cart-widget {
+    padding: 8px 14px;
+    gap: 8px;
+  }
 }

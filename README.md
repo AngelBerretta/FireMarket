@@ -1,16 +1,155 @@
-# React + Vite
+# 🔥 Fire Market 🛒
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> E-commerce desarrollado con **React + Firebase** como proyecto final del curso de React en **CoderHouse**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 Descripción
 
-## React Compiler
+**Fire Market** es una tienda online donde los usuarios pueden:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Explorar productos por categoría
+* Ver el detalle de cada artículo
+* Gestionar un carrito de compras persistente
+* Finalizar una orden de compra
 
-## Expanding the ESLint configuration
+Los productos y órdenes se almacenan en **Firestore**, y el stock se actualiza en tiempo real mediante **transacciones atómicas**.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Funcionalidades principales
+
+* 🗂️ Catálogo de productos con filtro por categoría
+* 🔍 Vista de detalle con stock en tiempo real
+* 🛒 Carrito con persistencia en `localStorage`
+* ✅ Validación de stock al agregar productos y en checkout
+* 📦 Actualización atómica del stock en Firestore
+* 📱 Diseño responsive con menú hamburguesa
+* 🔔 Notificaciones toast al agregar productos
+
+---
+
+# 🖥️ Preview del proyecto
+
+## 🏠 Pantalla principal (catálogo + filtros)
+
+<p align="center">
+  <img src="https://i.postimg.cc/PJDvsR9w/ebb50dda_67c0_4397_9264_89c6b80ea676.gif" width="800"/>
+</p>
+
+---
+
+## 📦 Detalle del producto + agregar al carrito
+
+<p align="center">
+  <img src="https://i.postimg.cc/sxM1PNs0/0aade779_7f4e_4fb0_a583_a032ff1fd93b.gif" width="800"/>
+</p>
+
+---
+
+## 🧾 Checkout + generación de orden
+
+Al finalizar la compra:
+
+* Se despliega un modal con formulario
+* Se genera un número de orden
+* Se valida en Firebase la creación correcta
+
+<p align="center">
+  <img src="https://i.postimg.cc/Kv4tQ002/output-onlinegiftools.gif" width="800"/>
+</p>
+
+---
+
+# ⚙️ Instalación y ejecución
+
+### 1️⃣ Clonar el repositorio
+
+```bash
+git clone https://github.com/tu-usuario/fire-market.git
+```
+
+### 2️⃣ Ingresar al proyecto
+
+```bash
+cd fire-market
+```
+
+### 3️⃣ Instalar dependencias
+
+```bash
+npm install
+```
+
+### 4️⃣ Ejecutar en desarrollo
+
+```bash
+npm run dev
+```
+
+Abrir en el navegador:
+
+```
+http://localhost:5173
+```
+
+> ⚠️ Requisito: **Node.js v22.11.0 o superior**
+
+---
+
+# 📁 Estructura del proyecto
+
+```
+src/
+│
+├── components/
+│   ├── NavBar.jsx
+│   ├── ItemListContainer.jsx
+│   ├── ItemDetailContainer.jsx
+│   ├── ItemDetail.jsx
+│   ├── ItemCount.jsx
+│   ├── Item.jsx
+│   ├── CartWidget.jsx
+│   ├── CartContainer.jsx
+│   ├── CartView.jsx
+│   ├── Checkout.jsx
+│   ├── Toast.jsx
+│   ├── About.jsx
+│   ├── Contact.jsx
+│   ├── Footer.jsx
+│   ├── EmptyCart.jsx
+│   ├── Error.jsx
+│   └── ScrollToTop.jsx
+│
+├── context/
+│   └── CartContext.jsx
+│
+├── service/
+│   ├── firebase.jsx
+│   ├── firestoreService.js
+│   └── ordersService.js
+│
+└── css/
+```
+
+---
+
+# 📚 Librerías utilizadas
+
+| Librería         | Versión | Uso                        |
+| ---------------- | ------- | -------------------------- |
+| React            | ^19.2.0 | Biblioteca principal de UI |
+| React DOM        | ^19.2.0 | Renderizado en navegador   |
+| React Router DOM | ^7.12.0 | Navegación SPA             |
+| Firebase         | ^12.9.0 | Base de datos Firestore    |
+| React Icons      | ^5.5.0  | Íconos SVG                 |
+| Prop Types       | ^15.8.1 | Validación de props        |
+| Vite             | 7.2.5   | Bundler y servidor         |
+
+---
+
+# 👨‍💻 Autor
+
+Desarrollado por **Angel Gabriel Berretta** 🔥
+
+---

@@ -1,0 +1,122 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Páginas estáticas (About / Contact / 404) */
+.page-container {
+  background-color: #2a2a2a;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 1px solid rgba(255, 107, 53, 0.1);
+}
+
+.page-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.page-container p {
+  font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  color: white;
+  text-align: center;
+  padding: 1.25rem;
+  margin-top: 2rem;
+  border-top: 2px solid #ff6b35;
+}
+
+.footer p {
+  margin: 0;
+  color: #999;
+  font-size: 0.875rem;
+}
+
+/* Spinner de carga */
+.loading-spinner {
+  padding: 3rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.loading-spinner p {
+  color: #999;
+  font-size: 0.9375rem;
+  margin-top: 0.5rem;
+}
+
+.spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(255, 107, 53, 0.2);
+  border-top: 3px solid #ff6b35;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error */
+.error-container {
+  background: #2a2a2a;
+  border: 1px solid rgba(244,67,54,0.2);
+  border-radius: 8px;
+  padding: 2.5rem 1.25rem;
+  text-align: center;
+}
+
+.error-container h3 { color: #f44336; margin-bottom: 0.75rem; }
+.error-container p  { color: #999; margin-bottom: 1rem; }
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+
+  .page-container {
+    padding: 1.5rem;
+  }
+
+  .page-container h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 0.75rem;
+  }
+
+  .page-container {
+    padding: 1.25rem 1rem;
+  }
+
+  .footer {
+    padding: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .footer p {
+    font-size: 0.8125rem;
+  }
+}

@@ -1,0 +1,168 @@
+/* Toast Container - Posicionado a la DERECHA */
+.toast-container {
+  position: fixed;
+  top: 80px; /* Debajo del navbar */
+  right: 20px; /* Posicionado a la derecha */
+  z-index: 10000;
+  width: 90%;
+  max-width: 400px; /* Ancho reducido para que se vea mejor a la derecha */
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Toast Content */
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  position: relative;
+}
+
+/* Toast Icon */
+.toast-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  animation: scaleIn 0.3s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Toast Product Section */
+.toast-product {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.toast-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #f0f0f0;
+}
+
+.toast-info {
+  flex: 1;
+}
+
+.toast-title {
+  margin: 0 0 0.25rem 0;
+  color: #27ae60;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.toast-product-name {
+  margin: 0;
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Toast Close Button */
+.toast-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  color: #999;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.toast-close:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+/* Progress Bar */
+.toast-progress {
+  height: 4px;
+  background: #f0f0f0;
+  overflow: hidden;
+}
+
+.toast-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #ff6b6b 0%, #ee5a5a 100%);
+  animation: progress 3s linear forwards;
+}
+
+@keyframes progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .toast-container {
+    top: 70px;
+    right: 10px; /* Menos margen en móvil */
+    width: calc(100% - 20px); /* Ancho casi completo en móvil */
+    max-width: 380px;
+  }
+
+  .toast-content {
+    padding: 0.75rem;
+  }
+
+  .toast-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .toast-title {
+    font-size: 0.85rem;
+  }
+
+  .toast-product-name {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .toast-container {
+    right: 5px;
+    width: calc(100% - 10px);
+    max-width: none;
+  }
+}

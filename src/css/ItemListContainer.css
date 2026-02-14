@@ -8,7 +8,7 @@
 }
 
 .category-title {
-  font-size: 2rem; /* 32px */
+  font-size: 2rem;
   font-weight: 800;
   color: #ffffff;
   margin-bottom: 0.5rem;
@@ -19,13 +19,13 @@
 }
 
 .category-icon {
-  font-size: 2.25rem; /* 36px */
+  font-size: 2.25rem;
   animation: fire-flicker 2s infinite alternate;
 }
 
 .category-count {
   color: #999;
-  font-size: 0.875rem; /* 14px */
+  font-size: 0.875rem;
 }
 
 .no-products, .error-container {
@@ -33,20 +33,20 @@
 }
 
 .no-products h3, .error-container h3 {
-  font-size: 1.5rem; /* 24px */
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
 .no-products p, .error-container p {
-  font-size: 1rem; /* 16px */
+  font-size: 1rem;
 }
 
 @media (max-width: 768px) {
   .category-title {
-    font-size: 1.5rem; /* 24px */
+    font-size: 1.5rem;
   }
-  
+
   .category-icon {
-    font-size: 1.75rem; /* 28px */
+    font-size: 1.75rem;
   }
 }
