@@ -33,9 +33,7 @@ Los productos y órdenes se almacenan en **Firestore**, y el stock se actualiza 
 
 ## 🏠 Pantalla principal (catálogo + filtros)
 
-<p align="center">
-  <img src="https://i.postimg.cc/PJDvsR9w/ebb50dda_67c0_4397_9264_89c6b80ea676.gif" width="800"/>
-</p>
+![Home](./public/gifs/home.gif)
 
 ---
 
