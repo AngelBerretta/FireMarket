@@ -40,13 +40,13 @@
   box-shadow: 0 2px 8px rgba(255, 107, 53, 0.4);
 }
 
-/* ─── dentro del panel mobile el widget puede ser más compacto ─── */
+
 .mobile-menu-cart .cart-widget {
   padding: 8px 14px;
   gap: 8px;
 }
 
-/* ═══  480px  ═══ */
+
 @media (max-width: 480px) {
   .cart-widget {
     padding: 8px 14px;

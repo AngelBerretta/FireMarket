@@ -73,7 +73,7 @@ const Checkout = () => {
       return 'El nombre no puede contener números'
     }
 
-    return null // Sin errores
+    return null 
   }
 
   const validateForm = () => {
@@ -165,7 +165,6 @@ const Checkout = () => {
       clearCart()
 
     } catch (error) {
-      // Mostramos el mensaje tal cual viene de updateProductStock
       setSubmitError(error.message || 'Hubo un error al procesar tu orden. Por favor intenta nuevamente.')
     } finally {
       setLoading(false)

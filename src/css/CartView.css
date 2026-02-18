@@ -1,4 +1,3 @@
-
 .empty-cart {
   display: flex;
   flex-direction: column;
@@ -132,7 +131,7 @@
   border-color: rgba(255, 107, 53, 0.6);
 }
 
-/* Lista de items */
+
 .cart-items-list {
   display: flex;
   flex-direction: column;
@@ -157,7 +156,7 @@
   background: rgba(255, 107, 53, 0.04);
 }
 
-/* Imagen miniatura */
+
 .cart-item-image-wrapper {
   width: 90px;
   height: 90px;
@@ -196,7 +195,7 @@
   margin: 0;
 }
 
-/* Controles +/− cantidad */
+
 .cart-item-controls {
   display: flex;
   align-items: center;
@@ -236,7 +235,7 @@
   background: #222;
 }
 
-/* Precio parcial */
+
 .cart-item-subtotal {
   text-align: right;
   min-width: 70px;
@@ -248,7 +247,7 @@
   color: #ff6b35;
 }
 
-/* Botón eliminar (✕) */
+
 .cart-item-remove {
   background: transparent;
   border: none;
@@ -269,7 +268,7 @@
   color: #f44336;
 }
 
-/* Resumen inferior */
+
 .cart-view-summary {
   padding: 1.5rem;
   border-top: 1px solid rgba(255, 107, 53, 0.2);
@@ -298,7 +297,7 @@
   text-shadow: 0 0 8px rgba(255, 107, 53, 0.3);
 }
 
-/* Envío gratis badge */
+
 .cart-free-shipping {
   display: flex;
   align-items: center;
@@ -318,7 +317,7 @@
   font-size: 1rem;
 }
 
-/* Botón finalizar compra */
+
 .cart-checkout-button {
   width: 100%;
   background: linear-gradient(135deg, #ff6b35, #ff8b35);
@@ -354,7 +353,7 @@
   animation: fire-dance 0.8s infinite alternate;
 }
 
-/* Botón seguir viendo productos */
+
 .cart-continue-shopping {
   width: 100%;
   background: transparent;
@@ -418,7 +417,7 @@
     justify-self: end;
   }
 
-  /* segunda fila: controles + subtotal */
+  
   .cart-item-controls {
     grid-column: 2;
     grid-row: 2;
@@ -471,7 +470,7 @@
   }
 }
 
-/* Texto "Máximo disponible" debajo del nombre en el carrito */
+
 .cart-item-stock-limit {
   margin: 0.15rem 0 0;
   font-size: 0.75rem;
@@ -479,7 +478,7 @@
   font-weight: 600;
 }
 
-/* Botón + deshabilitado por stock */
+
 .cart-qty-btn:disabled {
   opacity: 0.35;
   cursor: not-allowed;

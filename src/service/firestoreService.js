@@ -89,7 +89,7 @@ export const getProductsByCategory = async (category) => {
  */
 export const updateProductStock = async (items) => {
   await runTransaction(db, async (transaction) => {
-    // 1. Leer todos los documentos primero (Firestore exige leer antes de escribir)
+    // 1. Leer todos los documentos primero
     const snapshots = await Promise.all(
       items.map(item => transaction.get(doc(db, "productos", item.id)))
     );

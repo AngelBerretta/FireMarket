@@ -1,11 +1,11 @@
-/* Contact Container */
+
 .contact-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
 }
 
-/* Hero Section */
+
 .contact-hero {
   text-align: center;
   padding: 3rem 0;
@@ -35,7 +35,6 @@
   opacity: 0.95;
 }
 
-/* Contact Content */
 .contact-content {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -43,7 +42,6 @@
   margin-bottom: 3rem;
 }
 
-/* Contact Info */
 .contact-info {
   display: flex;
   flex-direction: column;
@@ -177,7 +175,7 @@
   box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
 }
 
-/* Success Message */
+
 .success-message {
   text-align: center;
   padding: 3rem;
@@ -203,7 +201,6 @@
   font-size: 1.1rem;
 }
 
-/* FAQ Section */
 .faq-section {
   background: white;
   padding: 2rem;
@@ -248,7 +245,7 @@
   line-height: 1.6;
 }
 
-/* Responsive */
+
 @media (max-width: 968px) {
   .contact-content {
     grid-template-columns: 1fr;

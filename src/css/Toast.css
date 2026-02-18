@@ -1,11 +1,11 @@
 /* Toast Container - Posicionado a la DERECHA */
 .toast-container {
   position: fixed;
-  top: 80px; /* Debajo del navbar */
-  right: 20px; /* Posicionado a la derecha */
+  top: 80px; 
+  right: 20px; 
   z-index: 10000;
   width: 90%;
-  max-width: 400px; /* Ancho reducido para que se vea mejor a la derecha */
+  max-width: 400px; 
   background: white;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
@@ -136,8 +136,8 @@
 @media (max-width: 768px) {
   .toast-container {
     top: 70px;
-    right: 10px; /* Menos margen en móvil */
-    width: calc(100% - 20px); /* Ancho casi completo en móvil */
+    right: 10px; 
+    width: calc(100% - 20px); 
     max-width: 380px;
   }
 

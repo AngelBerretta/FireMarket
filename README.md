@@ -17,6 +17,13 @@ Los productos y órdenes se almacenan en **Firestore**, y el stock se actualiza 
 
 ---
 
+# 💻 Version Host 💻
+
+Si desea ver el proyecto online, puede ingresar al siguiente link:
+👉 **[App](https://fire-market-angel.vercel.app/)**
+
+---
+
 ## 🚀 Funcionalidades principales
 
 * 🗂️ Catálogo de productos con filtro por categoría

@@ -11,7 +11,6 @@ const ItemDetail = ({ product }) => {
   const [added, setAdded] = useState(false)
   const { addItem, items } = useCart()
 
-  // Calcular stock disponible restando lo que ya está en el carrito
   const availableStock = useMemo(() => {
     const itemInCart = items.find(item => item.id === product.id)
     const quantityInCart = itemInCart ? itemInCart.quantity : 0
@@ -24,7 +23,7 @@ const ItemDetail = ({ product }) => {
 
     if (result.ok) {
       setShowToast(true)
-      setAdded(true) // 🔥 Oculta ItemCount después de agregar
+      setAdded(true)
     } else {
       setStockError(result.message)
     }
@@ -36,7 +35,6 @@ const ItemDetail = ({ product }) => {
 
   return (
     <>
-      {/* Notificación Toast */}
       {showToast && <Toast product={product} onClose={handleCloseToast} />}
 
       <div className="item-detail">
@@ -61,33 +59,48 @@ const ItemDetail = ({ product }) => {
               </div>
             </div>
 
-            {/* Características destacadas - ahora debajo de la imagen */}
-            <div className="detail-features-cards">
-              <div className="feature-card">
-                <div className="feature-icon-wrapper">
-                  <span className="feature-icon">🚚</span>
+            {/* ✨ VERSIÓN ULTRA-COMPACTA - Grid horizontal en desktop, vertical en mobile */}
+            <div className="detail-features-compact">
+              {/* Envío */}
+              <div className="feature-compact shipping">
+                <div className="feature-compact-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M1 3h15v13H1zM16 8h3l3 3v5h-6V8z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="5.5" cy="18.5" r="2.5" strokeWidth="2"/>
+                    <circle cx="18.5" cy="18.5" r="2.5" strokeWidth="2"/>
+                  </svg>
                 </div>
-                <div className="feature-content">
-                  <h4 className="feature-title">Envío Gratis</h4>
-                  <p className="feature-text">Compras mayores a $50</p>
-                </div>
-              </div>
-              <div className="feature-card">
-                <div className="feature-icon-wrapper">
-                  <span className="feature-icon">🛡️</span>
-                </div>
-                <div className="feature-content">
-                  <h4 className="feature-title">Garantía</h4>
-                  <p className="feature-text">12 meses de cobertura</p>
+                <div className="feature-compact-content">
+                  <h4>Envío Gratis</h4>
+                  <p>Compras +$50</p>
                 </div>
               </div>
-              <div className="feature-card">
-                <div className="feature-icon-wrapper">
-                  <span className="feature-icon">↩️</span>
+
+              {/* Garantía */}
+              <div className="feature-compact warranty">
+                <div className="feature-compact-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9 12l2 2 4-4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </div>
-                <div className="feature-content">
-                  <h4 className="feature-title">Devolución</h4>
-                  <p className="feature-text">30 días sin preguntas</p>
+                <div className="feature-compact-content">
+                  <h4>Garantía</h4>
+                  <p>12 meses</p>
+                </div>
+              </div>
+
+              {/* Devolución */}
+              <div className="feature-compact returns">
+                <div className="feature-compact-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M3 3v5h5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div className="feature-compact-content">
+                  <h4>Devolución</h4>
+                  <p>30 días</p>
                 </div>
               </div>
             </div>
@@ -225,4 +238,3 @@ const ItemDetail = ({ product }) => {
 }
 
 export default ItemDetail
-

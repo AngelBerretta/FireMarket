@@ -35,7 +35,7 @@ const CartView = () => {
   return (
     <div className="cart-view">
 
-      {/* ── Header del carrito ──────────────────────────────────── */}
+      
       <div className="cart-view-header">
         <h2 className="cart-view-title">
           <span className="cart-view-fire">🔥</span>
@@ -48,7 +48,7 @@ const CartView = () => {
         )}
       </div>
 
-      {/* ── Lista de items ──────────────────────────────────────── */}
+      
       <div className="cart-items-list">
         {items.map(item => {
           const atStockLimit = item.quantity >= (item.stock ?? Infinity)
@@ -56,22 +56,22 @@ const CartView = () => {
           return (
             <div key={item.id} className="cart-item">
 
-              {/* Imagen del producto */}
+              
               <div className="cart-item-image-wrapper">
                 <img src={item.image} alt={item.name} className="cart-item-image" loading="lazy" />
               </div>
 
-              {/* Información del producto */}
+              
               <div className="cart-item-info">
                 <h3 className="cart-item-name">{item.name}</h3>
                 <p className="cart-item-unit-price">${item.price.toFixed(2)} c/u</p>
-                {/* Indicador de stock al límite */}
+                
                 {atStockLimit && (
                   <p className="cart-item-stock-limit">Máximo disponible</p>
                 )}
               </div>
 
-              {/* Controles de cantidad */}
+              
               <div className="cart-item-controls">
                 <button
                   className="cart-qty-btn"
@@ -92,12 +92,12 @@ const CartView = () => {
                 </button>
               </div>
 
-              {/* Precio parcial de la línea */}
+              
               <div className="cart-item-subtotal">
                 <span>${(item.price * item.quantity).toFixed(2)}</span>
               </div>
 
-              {/* Botón eliminar */}
+              
               <button
                 className="cart-item-remove"
                 onClick={() => handleRemoveClick(item.id, item.name)}
@@ -110,7 +110,7 @@ const CartView = () => {
         })}
       </div>
 
-      {/* ── Resumen / Total ─────────────────────────────────────── */}
+      
       <div className="cart-view-summary">
         <div className="cart-summary-row">
           <span className="cart-summary-label">Total</span>
@@ -135,7 +135,7 @@ const CartView = () => {
         </button>
       </div>
 
-      {/* Modal de confirmación */}
+      
       <ConfirmDialog
         isOpen={confirmDialog.isOpen}
         onConfirm={handleConfirmRemove}
