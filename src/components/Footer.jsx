@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import '../css/Footer.css'
-import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa"
+import { Flame, CreditCard, Landmark, Banknote } from 'lucide-react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -12,7 +13,7 @@ const Footer = () => {
         <div className="footer-column">
           <div className="footer-brand">
             <h3 className="footer-logo">
-              <span className="footer-fire">🔥</span>
+              <Flame className="footer-fire" size={24} strokeWidth={2.5} />
               Fire Market
             </h3>
             <p className="footer-tagline">
@@ -94,9 +95,9 @@ const Footer = () => {
             © {currentYear} Fire Market - Todos los derechos reservados
           </p>
           <div className="footer-payment">
-            <span className="payment-icon">💳</span>
-            <span className="payment-icon">🏦</span>
-            <span className="payment-icon">💵</span>
+            <CreditCard className="payment-icon" size={24} strokeWidth={2} />
+            <Landmark className="payment-icon" size={24} strokeWidth={2} />
+            <Banknote className="payment-icon" size={24} strokeWidth={2} />
           </div>
         </div>
       </div>

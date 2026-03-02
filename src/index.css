@@ -96,3 +96,245 @@ img, video {
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+/* ============================================
+   ESTILOS BASE PARA ICONOS LUCIDE
+   ============================================ */
+
+.lucide-icon {
+  display: inline-block;
+  vertical-align: middle;
+  transition: all 0.3s ease;
+}
+
+/* ============================================
+   ANIMACIONES PARA ICONOS
+   ============================================ */
+
+/* Hover suave */
+.lucide-icon-hover:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Rotación suave */
+.lucide-icon-rotate:hover {
+  transform: rotate(5deg);
+}
+
+/* Pulse animation */
+@keyframes pulse-icon {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.lucide-icon-pulse {
+  animation: pulse-icon 2s ease-in-out infinite;
+}
+
+/* ============================================
+   CONTEXTOS ESPECÍFICOS
+   ============================================ */
+
+/* Logo principal */
+.fire-logo {
+  color: #FF4500;
+  filter: drop-shadow(0 2px 4px rgba(255, 69, 0, 0.3));
+  transition: all 0.3s ease;
+}
+
+.fire-logo:hover {
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 4px 8px rgba(255, 69, 0, 0.4));
+}
+
+/* Iconos de navegación */
+.nav-icon {
+  transition: all 0.3s ease;
+}
+
+a:hover .nav-icon {
+  transform: translateY(-2px);
+}
+
+/* Iconos en botones */
+.cart-icon,
+.empty-cart-button-fire,
+.cart-checkout-fire {
+  transition: all 0.3s ease;
+}
+
+button:hover .cart-icon,
+button:hover .empty-cart-button-fire,
+button:hover .cart-checkout-fire {
+  transform: scale(1.15);
+}
+
+/* Iconos de categorías */
+.category-icon {
+  transition: all 0.3s ease;
+}
+
+.dropdown-link:hover .category-icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+/* ============================================
+   AJUSTES DE COLOR Y TEMA
+   ============================================ */
+
+/* Fire/Flame icons */
+.fire-logo,
+.dropdown-fire,
+.mobile-fire,
+.cart-view-fire,
+.empty-cart-button-fire,
+.cart-checkout-fire {
+  color: #FF4500;
+}
+
+/* Success icons */
+.toast-icon {
+  color: #10B981;
+}
+
+/* Iconos de métodos de pago */
+.payment-icon {
+  color: var(--text-secondary, #6B7280);
+  transition: color 0.3s ease;
+}
+
+.payment-icon:hover {
+  color: var(--text-primary, #1F2937);
+}
+
+/* ============================================
+   ICONOS EN ESTADOS DISABLED
+   ============================================ */
+
+button:disabled .lucide-icon {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Ajustar tamaños de iconos en móviles si es necesario */
+  .fire-logo {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* ============================================
+   ACCESIBILIDAD
+   ============================================ */
+
+/* Asegurar que los iconos no interfieran con screen readers */
+.lucide-icon[aria-hidden="true"] {
+  pointer-events: none;
+}
+
+/* Mejorar contraste en modo alto contraste */
+@media (prefers-contrast: high) {
+  .lucide-icon {
+    stroke-width: 2.5;
+  }
+}
+
+/* Respetar preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .lucide-icon,
+  .fire-logo,
+  .nav-icon,
+  .cart-icon,
+  .category-icon {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* ============================================
+   UTILIDADES ADICIONALES
+   ============================================ */
+
+/* Centrar icono con texto */
+.icon-with-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Icono circular con background */
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 69, 0, 0.1);
+}
+
+/* Icono con badge/contador */
+.icon-with-badge {
+  position: relative;
+  display: inline-block;
+}
+
+/* ============================================
+   MEJORAS ESPECÍFICAS PARA FIRE MARKET
+   ============================================ */
+
+/* Efecto de "burning" para iconos de fuego */
+@keyframes flame-flicker {
+  0%, 100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.9;
+    filter: brightness(1.1);
+  }
+}
+
+.fire-logo,
+.dropdown-fire,
+.cart-view-fire {
+  animation: flame-flicker 2s ease-in-out infinite;
+}
+
+/* Dropdown arrow rotation */
+.dropdown-arrow {
+  transition: transform 0.3s ease;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Toast icon success animation */
+@keyframes check-bounce {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.toast-icon svg {
+  animation: check-bounce 0.5s ease-out;
+}

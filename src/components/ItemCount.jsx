@@ -1,5 +1,6 @@
 import '../css/ItemCount.css'
 import { useState } from 'react'
+import { ShoppingCart } from 'lucide-react'
 
 const ItemCount = ({ initial = 1, stock = 10, onAdd }) => {
   const [quantity, setQuantity] = useState(initial)
@@ -70,7 +71,7 @@ const ItemCount = ({ initial = 1, stock = 10, onAdd }) => {
         aria-label="Agregar al carrito"
       >
         <span>Agregar al carrito</span>
-        <span className="cart-icon">🛒</span>
+        <ShoppingCart className="cart-icon" size={20} strokeWidth={2} />
       </button>
       
       {stock > 0 && (

@@ -1,6 +1,6 @@
 # 🔥 Fire Market 🛒
 
-> E-commerce desarrollado con **React + Firebase** como proyecto final del curso de React en **CoderHouse**.
+> E-commerce desarrollado con **React + Firebase** 
 
 ---
 

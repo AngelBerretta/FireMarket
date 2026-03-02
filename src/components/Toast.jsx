@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import '../css/Toast.css'
+import { CheckCircle2, X } from 'lucide-react'
 
 const Toast = ({ product, onClose }) => {
   useEffect(() => {
@@ -14,7 +15,9 @@ const Toast = ({ product, onClose }) => {
   return (
     <div className="toast-container">
       <div className="toast-content">
-        <div className="toast-icon">✅</div>
+        <div className="toast-icon">
+          <CheckCircle2 size={28} strokeWidth={2} />
+        </div>
         
         <div className="toast-product">
           <img src={product.image} alt={product.name} className="toast-image" />
@@ -25,7 +28,7 @@ const Toast = ({ product, onClose }) => {
         </div>
 
         <button className="toast-close" onClick={onClose} aria-label="Cerrar">
-          ✕
+          <X size={20} strokeWidth={2} />
         </button>
       </div>
       

@@ -1,0 +1,9 @@
+# Ignorar CSS del cálculo principal
+src/css/* linguist-vendored 
+src/index.css linguist-vendored
+
+# Ignorar build
+dist/* linguist-vendored
+
+# Ignorar dependencias
+node_modules/* linguist-vendored
